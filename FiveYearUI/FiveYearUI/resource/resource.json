@@ -1,8 +1,12 @@
 {
 	"groups": [
 		{
-			"keys": "main_tex_19_png,main_tex_20_png,main_tex_21_png,main_tex_22_png,other_tex_png,screen_tex_png,share-notice_png,bg_png,end_png,cover_png,main_tex_0_png,main_tex_1_png,main_tex_2_png,main_tex_3_png,main_tex_4_png,main_tex_5_png,main_tex_6_png,main_tex_7_png,main_tex_8_png,main_tex_9_png,main_tex_10_png,main_tex_11_png,main_tex_12_png,main_tex_13_png,main_tex_14_png,main_tex_15_png,main_tex_16_png,main_tex_17_png,main_tex_18_png,main_tex_20_json,main_tex_22_json,other_ske_json,other_tex_json,screen_ske_json,main_tex_0_json,screen_tex_json,main_ske_json,main_tex_1_json,main_tex_2_json,main_tex_3_json,main_tex_5_json,main_tex_6_json,main_tex_4_json,main_tex_7_json,main_tex_8_json,main_tex_9_json,main_tex_10_json,main_tex_11_json,main_tex_12_json,main_tex_13_json,main_tex_14_json,main_tex_16_json,main_tex_15_json,main_tex_17_json,main_tex_18_json,main_tex_19_json,main_tex_21_json",
+			"keys": "main_tex_19_png,main_tex_20_png,main_tex_21_png,main_tex_22_png,screen_tex_png,share-notice_png,bg_png,end_png,cover_png,main_tex_0_png,main_tex_1_png,main_tex_2_png,main_tex_3_png,main_tex_4_png,main_tex_5_png,main_tex_6_png,main_tex_7_png,main_tex_8_png,main_tex_9_png,main_tex_10_png,main_tex_11_png,main_tex_12_png,main_tex_13_png,main_tex_14_png,main_tex_15_png,main_tex_16_png,main_tex_17_png,main_tex_18_png,main_tex_20_json,main_tex_22_json,screen_ske_json,main_tex_0_json,screen_tex_json,main_ske_json,main_tex_1_json,main_tex_2_json,main_tex_3_json,main_tex_5_json,main_tex_6_json,main_tex_4_json,main_tex_7_json,main_tex_8_json,main_tex_9_json,main_tex_10_json,main_tex_11_json,main_tex_12_json,main_tex_13_json,main_tex_14_json,main_tex_16_json,main_tex_15_json,main_tex_17_json,main_tex_18_json,main_tex_19_json,main_tex_21_json",
 			"name": "preload"
+		},
+        {
+			"keys": "other_tex_png,other_ske_json,other_tex_json",
+			"name": "other"
 		}
 	],
 	"resources": [

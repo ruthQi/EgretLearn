@@ -29,9 +29,12 @@
 
 class Main extends eui.UILayer {
 
-
+    private scaleMode;
+    private Router:Router;
     protected createChildren(): void {
         super.createChildren();
+
+        
 
         egret.lifecycle.addLifecycleListener((context) => {
             // custom lifecycle plugin
@@ -56,7 +59,9 @@ class Main extends eui.UILayer {
             console.log(e);
         })
     }
+    private updateScaleMode(){
 
+    }
     private async runGame() {
         await this.loadResource()
         this.createGameScene();
@@ -95,6 +100,7 @@ class Main extends eui.UILayer {
     }
 
     private textfield: egret.TextField;
+    private loading: LoadingSkin;
     /**
      * 创建场景界面
      * Create scene interface
@@ -163,20 +169,29 @@ class Main extends eui.UILayer {
     private armature:dragonBones.Armature;
     private armatureClip:egret.DisplayObject;
     private initGame(): void{
-        var skeletonOther = RES.getRes("other_ske_json");
-        console.log(skeletonOther);
-        var otherTexJson = RES.getRes('other_tex_json');
-        var otherTexPng = RES.getRes('other_tex_png');
-        this.factory.addSkeletonData(dragonBones.DataParser.parseDragonBonesData(skeletonOther));
-        this.factory.addTextureAtlas(new dragonBones.EgretTextureAtlas(otherTexPng,otherTexJson));
-         var armatureName:string = skeletonOther.armature[0].name;
-        this.armature = this.factory.buildArmature(armatureName);
-        this.armatureClip = this.armature.getDisplay();
-        dragonBones.WorldClock.clock.add(this.armature);
-        this.addChild(this.armatureClip);
-        this.armature.animation.gotoAndPlay("Animation");
-        egret.startTick(this.onTicker, this);
-        this.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.onTouchMove, this);
+        // var skeletonOther = RES.getRes("other_ske_json");
+        // console.log(skeletonOther);
+        // var otherTexJson = RES.getRes('other_tex_json');
+        // var otherTexPng = RES.getRes('other_tex_png');
+        // this.factory.addSkeletonData(dragonBones.DataParser.parseDragonBonesData(skeletonOther));
+        // this.factory.addTextureAtlas(new dragonBones.EgretTextureAtlas(otherTexPng,otherTexJson));
+        //  var armatureName:string = skeletonOther.armature[0].name;
+        // this.armature = this.factory.buildArmature(armatureName);
+        // this.armatureClip = this.armature.getDisplay();
+        // dragonBones.WorldClock.clock.add(this.armature);
+        // this.addChild(this.armatureClip);
+        // this.armature.animation.gotoAndPlay("Animation");
+        // egret.startTick(this.onTicker, this);
+        // this.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.onTouchMove, this);
+        this.scaleMode = this.stage.scaleMode;
+        this.updateScaleMode();
+        var self = this;
+        window.addEventListener("resize", function(){
+            self.updateScaleMode();
+        });
+        this.loading = new LoadingSkin();
+        console.log(this.loading)
+        //new Router(this).replace(this.loading);
     }
 
     private _time: number;

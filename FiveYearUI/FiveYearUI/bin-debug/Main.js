@@ -99,6 +99,8 @@ var Main = (function (_super) {
             console.log(e);
         });
     };
+    Main.prototype.updateScaleMode = function () {
+    };
     Main.prototype.runGame = function () {
         return __awaiter(this, void 0, void 0, function () {
             var userInfo;
@@ -221,20 +223,29 @@ var Main = (function (_super) {
         // button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
     };
     Main.prototype.initGame = function () {
-        var skeletonOther = RES.getRes("other_ske_json");
-        console.log(skeletonOther);
-        var otherTexJson = RES.getRes('other_tex_json');
-        var otherTexPng = RES.getRes('other_tex_png');
-        this.factory.addSkeletonData(dragonBones.DataParser.parseDragonBonesData(skeletonOther));
-        this.factory.addTextureAtlas(new dragonBones.EgretTextureAtlas(otherTexPng, otherTexJson));
-        var armatureName = skeletonOther.armature[0].name;
-        this.armature = this.factory.buildArmature(armatureName);
-        this.armatureClip = this.armature.getDisplay();
-        dragonBones.WorldClock.clock.add(this.armature);
-        this.addChild(this.armatureClip);
-        this.armature.animation.gotoAndPlay("Animation");
-        egret.startTick(this.onTicker, this);
-        this.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.onTouchMove, this);
+        // var skeletonOther = RES.getRes("other_ske_json");
+        // console.log(skeletonOther);
+        // var otherTexJson = RES.getRes('other_tex_json');
+        // var otherTexPng = RES.getRes('other_tex_png');
+        // this.factory.addSkeletonData(dragonBones.DataParser.parseDragonBonesData(skeletonOther));
+        // this.factory.addTextureAtlas(new dragonBones.EgretTextureAtlas(otherTexPng,otherTexJson));
+        //  var armatureName:string = skeletonOther.armature[0].name;
+        // this.armature = this.factory.buildArmature(armatureName);
+        // this.armatureClip = this.armature.getDisplay();
+        // dragonBones.WorldClock.clock.add(this.armature);
+        // this.addChild(this.armatureClip);
+        // this.armature.animation.gotoAndPlay("Animation");
+        // egret.startTick(this.onTicker, this);
+        // this.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.onTouchMove, this);
+        this.scaleMode = this.stage.scaleMode;
+        this.updateScaleMode();
+        var self = this;
+        window.addEventListener("resize", function () {
+            self.updateScaleMode();
+        });
+        this.loading = new LoadingSkin();
+        console.log(this.loading);
+        //new Router(this).replace(this.loading);
     };
     Main.prototype.onTicker = function (timestamp) {
         if (!this._time) {

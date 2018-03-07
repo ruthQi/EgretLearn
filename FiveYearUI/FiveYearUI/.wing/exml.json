@@ -1,0 +1,12 @@
+{
+    "161ff54432e": {
+        "path": "Scenes\\LodingSkin.ts",
+        "class": "LodingSkin",
+        "parentPath": ""
+    },
+    "161ff5b2dae": {
+        "path": "Scenes\\DragonBones.ts",
+        "class": "DragonBones",
+        "parentPath": ""
+    }
+}
