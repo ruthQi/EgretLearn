@@ -1,288 +1,30 @@
 {
 	"groups": [
 		{
-			"keys": "main_tex_17_json,main_tex_18_json,main_tex_19_json,main_tex_20_json,main_tex_21_json,main_tex_22_json,other_ske_json,other_tex_json,main_ske_json,main_tex_0_json,main_tex_1_json,main_tex_2_json,main_tex_3_json,main_tex_4_json,main_tex_5_json,main_tex_6_json,main_tex_7_json,main_tex_8_json,main_tex_9_json,main_tex_10_json,main_tex_11_json,main_tex_12_json,main_tex_13_json,main_tex_14_json,main_tex_15_json,main_tex_16_json,cover_png,end_png,bg_png,main_tex_16_png,main_tex_17_png,main_tex_18_png,main_tex_19_png,main_tex_20_png,main_tex_21_png,main_tex_22_png,other_tex_png,share-notice_png,main_tex_0_png,main_tex_1_png,main_tex_2_png,main_tex_3_png,main_tex_4_png,main_tex_5_png,main_tex_6_png,main_tex_7_png,main_tex_8_png,main_tex_9_png,main_tex_10_png,main_tex_11_png,main_tex_12_png,main_tex_13_png,main_tex_14_png,main_tex_15_png",
-			"name": "preload"
-		},
-		{
-			"keys": "other_ske_json,other_tex_json,other_tex_png",
-			"name": "other"
-		},
-		{
-			"keys": "main_ske_json,main_tex_0_json,main_tex_0_png,main_tex_1_png,main_tex_1_json,main_tex_2_png,main_tex_2_json,main_tex_3_png,main_tex_3_json,main_tex_4_json,main_tex_4_png,main_tex_5_png,main_tex_5_json,main_tex_6_json,main_tex_6_png,main_tex_7_json,main_tex_7_png,main_tex_8_json,main_tex_8_png,main_tex_9_json,main_tex_9_png,main_tex_10_json,main_tex_10_png,main_tex_11_json,main_tex_11_png,main_tex_12_json,main_tex_12_png,main_tex_13_json,main_tex_13_png,main_tex_14_json,main_tex_14_png,main_tex_15_json,main_tex_15_png,main_tex_16_json,main_tex_16_png,main_tex_17_json,main_tex_17_png,main_tex_18_json,main_tex_18_png,main_tex_19_json,main_tex_19_png,main_tex_20_json,main_tex_20_png,main_tex_21_json,main_tex_21_png,main_tex_22_json,main_tex_22_png",
-			"name": "main"
+			"name": "preload",
+			"keys": "bg_png,skeleton_json,texture_json,texture_png"
 		}
 	],
 	"resources": [
 		{
-			"url": "assets/main_tex_17.json",
+			"name": "bg_png",
+			"type": "image",
+			"url": "assets/bg.png"
+		},
+		{
+			"name": "skeleton_json",
 			"type": "json",
-			"name": "main_tex_17_json"
+			"url": "assets/skeleton.json"
 		},
 		{
-			"url": "assets/main_tex_18.json",
+			"name": "texture_json",
 			"type": "json",
-			"name": "main_tex_18_json"
+			"url": "assets/texture.json"
 		},
 		{
-			"url": "assets/main_tex_19.json",
-			"type": "json",
-			"name": "main_tex_19_json"
-		},
-		{
-			"url": "assets/main_tex_20.json",
-			"type": "json",
-			"name": "main_tex_20_json"
-		},
-		{
-			"url": "assets/main_tex_21.json",
-			"type": "json",
-			"name": "main_tex_21_json"
-		},
-		{
-			"url": "assets/main_tex_22.json",
-			"type": "json",
-			"name": "main_tex_22_json"
-		},
-		{
-			"url": "assets/other_ske.json",
-			"type": "json",
-			"name": "other_ske_json"
-		},
-		{
-			"url": "assets/other_tex.json",
-			"type": "json",
-			"name": "other_tex_json"
-		},
-		{
-			"url": "assets/main_ske.json",
-			"type": "json",
-			"name": "main_ske_json"
-		},
-		{
-			"url": "assets/main_tex_0.json",
-			"type": "json",
-			"name": "main_tex_0_json"
-		},
-		{
-			"url": "assets/main_tex_1.json",
-			"type": "json",
-			"name": "main_tex_1_json"
-		},
-		{
-			"url": "assets/main_tex_2.json",
-			"type": "json",
-			"name": "main_tex_2_json"
-		},
-		{
-			"url": "assets/main_tex_3.json",
-			"type": "json",
-			"name": "main_tex_3_json"
-		},
-		{
-			"url": "assets/main_tex_4.json",
-			"type": "json",
-			"name": "main_tex_4_json"
-		},
-		{
-			"url": "assets/main_tex_5.json",
-			"type": "json",
-			"name": "main_tex_5_json"
-		},
-		{
-			"url": "assets/main_tex_6.json",
-			"type": "json",
-			"name": "main_tex_6_json"
-		},
-		{
-			"url": "assets/main_tex_7.json",
-			"type": "json",
-			"name": "main_tex_7_json"
-		},
-		{
-			"url": "assets/main_tex_8.json",
-			"type": "json",
-			"name": "main_tex_8_json"
-		},
-		{
-			"url": "assets/main_tex_9.json",
-			"type": "json",
-			"name": "main_tex_9_json"
-		},
-		{
-			"url": "assets/main_tex_10.json",
-			"type": "json",
-			"name": "main_tex_10_json"
-		},
-		{
-			"url": "assets/main_tex_11.json",
-			"type": "json",
-			"name": "main_tex_11_json"
-		},
-		{
-			"url": "assets/main_tex_12.json",
-			"type": "json",
-			"name": "main_tex_12_json"
-		},
-		{
-			"url": "assets/main_tex_13.json",
-			"type": "json",
-			"name": "main_tex_13_json"
-		},
-		{
-			"url": "assets/main_tex_14.json",
-			"type": "json",
-			"name": "main_tex_14_json"
-		},
-		{
-			"url": "assets/main_tex_15.json",
-			"type": "json",
-			"name": "main_tex_15_json"
-		},
-		{
-			"url": "assets/main_tex_16.json",
-			"type": "json",
-			"name": "main_tex_16_json"
-		},
-		{
-			"url": "assets/cover.png",
+			"name": "texture_png",
 			"type": "image",
-			"name": "cover_png"
-		},
-		{
-			"url": "assets/end.png",
-			"type": "image",
-			"name": "end_png"
-		},
-		{
-			"url": "assets/bg.png",
-			"type": "image",
-			"name": "bg_png"
-		},
-		{
-			"url": "assets/main_tex_16.png",
-			"type": "image",
-			"name": "main_tex_16_png"
-		},
-		{
-			"url": "assets/main_tex_17.png",
-			"type": "image",
-			"name": "main_tex_17_png"
-		},
-		{
-			"url": "assets/main_tex_18.png",
-			"type": "image",
-			"name": "main_tex_18_png"
-		},
-		{
-			"url": "assets/main_tex_19.png",
-			"type": "image",
-			"name": "main_tex_19_png"
-		},
-		{
-			"url": "assets/main_tex_20.png",
-			"type": "image",
-			"name": "main_tex_20_png"
-		},
-		{
-			"url": "assets/main_tex_21.png",
-			"type": "image",
-			"name": "main_tex_21_png"
-		},
-		{
-			"url": "assets/main_tex_22.png",
-			"type": "image",
-			"name": "main_tex_22_png"
-		},
-		{
-			"url": "assets/other_tex.png",
-			"type": "image",
-			"name": "other_tex_png"
-		},
-		{
-			"url": "assets/share-notice.png",
-			"type": "image",
-			"name": "share-notice_png"
-		},
-		{
-			"url": "assets/main_tex_0.png",
-			"type": "image",
-			"name": "main_tex_0_png"
-		},
-		{
-			"url": "assets/main_tex_1.png",
-			"type": "image",
-			"name": "main_tex_1_png"
-		},
-		{
-			"url": "assets/main_tex_2.png",
-			"type": "image",
-			"name": "main_tex_2_png"
-		},
-		{
-			"url": "assets/main_tex_3.png",
-			"type": "image",
-			"name": "main_tex_3_png"
-		},
-		{
-			"url": "assets/main_tex_4.png",
-			"type": "image",
-			"name": "main_tex_4_png"
-		},
-		{
-			"url": "assets/main_tex_5.png",
-			"type": "image",
-			"name": "main_tex_5_png"
-		},
-		{
-			"url": "assets/main_tex_6.png",
-			"type": "image",
-			"name": "main_tex_6_png"
-		},
-		{
-			"url": "assets/main_tex_7.png",
-			"type": "image",
-			"name": "main_tex_7_png"
-		},
-		{
-			"url": "assets/main_tex_8.png",
-			"type": "image",
-			"name": "main_tex_8_png"
-		},
-		{
-			"url": "assets/main_tex_9.png",
-			"type": "image",
-			"name": "main_tex_9_png"
-		},
-		{
-			"url": "assets/main_tex_10.png",
-			"type": "image",
-			"name": "main_tex_10_png"
-		},
-		{
-			"url": "assets/main_tex_11.png",
-			"type": "image",
-			"name": "main_tex_11_png"
-		},
-		{
-			"url": "assets/main_tex_12.png",
-			"type": "image",
-			"name": "main_tex_12_png"
-		},
-		{
-			"url": "assets/main_tex_13.png",
-			"type": "image",
-			"name": "main_tex_13_png"
-		},
-		{
-			"url": "assets/main_tex_14.png",
-			"type": "image",
-			"name": "main_tex_14_png"
-		},
-		{
-			"url": "assets/main_tex_15.png",
-			"type": "image",
-			"name": "main_tex_15_png"
+			"url": "assets/texture.png"
 		}
 	]
 }

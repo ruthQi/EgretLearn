@@ -73,7 +73,7 @@ class Main extends egret.DisplayObjectContainer {
         try {
             const loadingView = new LoadingUI();
             this.stage.addChild(loadingView);
-            await RES.loadConfig("resource/default.res.json", "resource/");
+            await RES.loadConfig("resource/resource.json", "resource/");
             await RES.loadGroup("preload", 0, loadingView);
             this.stage.removeChild(loadingView);
         }
@@ -88,9 +88,9 @@ class Main extends egret.DisplayObjectContainer {
      * 创建游戏场景
      * Create a game scene
      */
-    private createGameScene() {
-        let sky = this.createBitmapByName("bg_png");
-        this.addChild(sky);
+    private createGameScene():void {
+        // let sky = this.createBitmapByName("bg_png");
+        // this.addChild(sky);
         this.initGame();
 
 
@@ -100,17 +100,19 @@ class Main extends egret.DisplayObjectContainer {
     private factory:dragonBones.EgretFactory = new dragonBones.EgretFactory();
     private armature:dragonBones.Armature;
     private armatureClip:egret.DisplayObject;
-    private initGame(){
-        var skeletonOther = RES.getRes('other_ske_json');
+    private initGame(): void{
+        var skeletonOther = RES.getRes("other_ske_json");
+        console.log(skeletonOther);
         var otherTexJson = RES.getRes('other_tex_json');
         var otherTexPng = RES.getRes('other_tex_png');
         this.factory.addSkeletonData(dragonBones.DataParser.parseDragonBonesData(skeletonOther));
-        this.factory.addTextureAtlas(new dragonBones.EgretTextureAtlas(otherTexJson,otherTexPng));
-        this.armature = this.factory.buildArmature("other");
+        this.factory.addTextureAtlas(new dragonBones.EgretTextureAtlas(otherTexPng,otherTexJson));
+         var armatureName:string = skeletonOther.armature[0].name;
+        this.armature = this.factory.buildArmature(armatureName);
         this.armatureClip = this.armature.getDisplay();
         dragonBones.WorldClock.clock.add(this.armature);
         this.addChild(this.armatureClip);
-        this.armature.animation.gotoAndPlay("play");
+        this.armature.animation.gotoAndPlay("Animation");
         egret.startTick(this.onTicker, this);
         this.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.onTouchMove, this);
     }
@@ -122,6 +124,7 @@ class Main extends egret.DisplayObjectContainer {
         }
         var now = timestamp;
         var pass = now - this._time;
+        this._time = now;
         dragonBones.WorldClock.clock.advanceTime(pass);
         return false;
     }
