@@ -60,7 +60,15 @@ class Main extends eui.UILayer {
         })
     }
     private updateScaleMode(){
-
+        if(window.innerWidth < window.innerHeight){
+            this.stage.scaleMode = this.scaleMode;    
+        }else{
+            if(window.orientation === 0 || window.orientation === 180){
+                this.stage.scaleMode = this.scaleMode;
+            }else{
+                this.stage.scaleMode = egret.StageScaleMode.SHOW_ALL;
+            }
+        }
     }
     private async runGame() {
         await this.loadResource()
@@ -80,6 +88,8 @@ class Main extends eui.UILayer {
             await RES.loadConfig("resource/resource.json", "resource/");
             await this.loadTheme();
             await RES.loadGroup("preload", 0, loadingView);
+            await RES.loadGroup("other", 0, loadingView);
+            
             this.stage.removeChild(loadingView);
         }
         catch (e) {
@@ -100,18 +110,18 @@ class Main extends eui.UILayer {
     }
 
     private textfield: egret.TextField;
-    private loading: LoadingSkin;
+    //private loading: LoadingSkin;
     /**
      * 创建场景界面
      * Create scene interface
      */
     protected createGameScene(): void {
-        let sky = this.createBitmapByName("bg_png");
-        this.addChild(sky);
-        let stageW = this.stage.stageWidth;
-        let stageH = this.stage.stageHeight;
-        sky.width = stageW;
-        sky.height = stageH;
+        // let sky = this.createBitmapByName("bg_png");
+        // this.addChild(sky);
+        // let stageW = this.stage.stageWidth;
+        // let stageH = this.stage.stageHeight;
+        // sky.width = stageW;
+        // sky.height = stageH;
         this.initGame();
         // let topMask = new egret.Shape();
         // topMask.graphics.beginFill(0x000000, 0.5);
@@ -189,9 +199,10 @@ class Main extends eui.UILayer {
         window.addEventListener("resize", function(){
             self.updateScaleMode();
         });
-        this.loading = new LoadingSkin();
-        console.log(this.loading)
-        //new Router(this).replace(this.loading);
+        //this.loading = new LoadingSkin();
+        console.log('-------------',this)
+        new Router(this).replace(app.Loading,{});
+        
     }
 
     private _time: number;

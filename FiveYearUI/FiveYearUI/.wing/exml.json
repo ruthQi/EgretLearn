@@ -8,5 +8,20 @@
         "path": "Scenes\\DragonBones.ts",
         "class": "DragonBones",
         "parentPath": ""
+    },
+    "162045201f2": {
+        "path": "Scenes\\Preload.ts",
+        "class": "Preload",
+        "parentPath": ""
+    },
+    "16204549048": {
+        "path": "Scenes\\Preload.ts",
+        "class": "Preload",
+        "parentPath": ""
+    },
+    "16204f6ab41": {
+        "path": "Scenes\\Loading.ts",
+        "class": "Loading",
+        "parentPath": ""
     }
 }

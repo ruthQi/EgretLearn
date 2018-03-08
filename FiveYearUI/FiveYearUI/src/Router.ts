@@ -1,8 +1,8 @@
 class Router{
     public context;
-    constructor(className){
-        console.log('===========',className)
-        this.context = className;
+    constructor(obj){
+        console.log('===========',obj)
+        this.context = obj;
         var self = this;
         window.addEventListener("popstate", function(e){
             e.state && self.changeScene(egret.getDefinitionByName(e.state.sceneClassName), e.state.params);
@@ -19,6 +19,7 @@ class Router{
     }
 
     public replace(scene,params){
+        //console.log(scene)
         window.history && window.history.replaceState({
             sceneClassName: egret.getQualifiedClassName(scene),
 			params: params
@@ -28,10 +29,9 @@ class Router{
 
     private changeScene(scene, params){
         var item = new scene(params);
+        console.log(this.context)
         item.$router = this;
         this.context.removeChildren();
         this.context.addChild(item);
     }
 }
-
-declare interface Window{};

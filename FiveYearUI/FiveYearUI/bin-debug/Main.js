@@ -100,6 +100,17 @@ var Main = (function (_super) {
         });
     };
     Main.prototype.updateScaleMode = function () {
+        if (window.innerWidth < window.innerHeight) {
+            this.stage.scaleMode = this.scaleMode;
+        }
+        else {
+            if (window.orientation === 0 || window.orientation === 180) {
+                this.stage.scaleMode = this.scaleMode;
+            }
+            else {
+                this.stage.scaleMode = egret.StageScaleMode.SHOW_ALL;
+            }
+        }
     };
     Main.prototype.runGame = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -132,7 +143,7 @@ var Main = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        _a.trys.push([0, 4, , 5]);
+                        _a.trys.push([0, 5, , 6]);
                         loadingView = new LoadingUI();
                         this.stage.addChild(loadingView);
                         return [4 /*yield*/, RES.loadConfig("resource/resource.json", "resource/")];
@@ -144,13 +155,16 @@ var Main = (function (_super) {
                         return [4 /*yield*/, RES.loadGroup("preload", 0, loadingView)];
                     case 3:
                         _a.sent();
-                        this.stage.removeChild(loadingView);
-                        return [3 /*break*/, 5];
+                        return [4 /*yield*/, RES.loadGroup("other", 0, loadingView)];
                     case 4:
+                        _a.sent();
+                        this.stage.removeChild(loadingView);
+                        return [3 /*break*/, 6];
+                    case 5:
                         e_1 = _a.sent();
                         console.error(e_1);
-                        return [3 /*break*/, 5];
-                    case 5: return [2 /*return*/];
+                        return [3 /*break*/, 6];
+                    case 6: return [2 /*return*/];
                 }
             });
         });
@@ -166,17 +180,18 @@ var Main = (function (_super) {
             }, _this);
         });
     };
+    //private loading: LoadingSkin;
     /**
      * 创建场景界面
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
-        var sky = this.createBitmapByName("bg_png");
-        this.addChild(sky);
-        var stageW = this.stage.stageWidth;
-        var stageH = this.stage.stageHeight;
-        sky.width = stageW;
-        sky.height = stageH;
+        // let sky = this.createBitmapByName("bg_png");
+        // this.addChild(sky);
+        // let stageW = this.stage.stageWidth;
+        // let stageH = this.stage.stageHeight;
+        // sky.width = stageW;
+        // sky.height = stageH;
         this.initGame();
         // let topMask = new egret.Shape();
         // topMask.graphics.beginFill(0x000000, 0.5);
@@ -243,9 +258,9 @@ var Main = (function (_super) {
         window.addEventListener("resize", function () {
             self.updateScaleMode();
         });
-        this.loading = new LoadingSkin();
-        console.log(this.loading);
-        //new Router(this).replace(this.loading);
+        //this.loading = new LoadingSkin();
+        console.log('-------------', this);
+        new Router(this).replace(app.Loading, {});
     };
     Main.prototype.onTicker = function (timestamp) {
         if (!this._time) {
