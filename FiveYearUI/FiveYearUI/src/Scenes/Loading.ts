@@ -22,14 +22,14 @@ namespace app{
 		{
 			super.childrenCreated();
 			var self = this;
-			console.log('99999999999999999');
-			this.other = new common.Preload();
-			this.other.groupName = "other";
-			this.other.priority = 1;
+			//this.other = new common.Preload();
+			console.log(this.other)
+			//this.other.groupName = "other";
+			//this.other.priority = 1;
 			//this.other.groupName="other";
-			this.other.addEventListener(egret.Event.COMPLETE, function(){
+			this.other.addEventListener(egret.Event.COMPLETE, function(e){
 			// 	//console.log(DragonBonesObj)
-			// 	console.log('999999999999999999')
+				console.log('yyyyyyyyyyyyyyyyyyyyy')
 				var dragonBone = new common.DragonBonesImp();
 				console.log(dragonBone)
 				dragonBone.name = "other";
@@ -37,13 +37,18 @@ namespace app{
 				dragonBone.horizontalCenter = 0;
 				dragonBone.verticalCenter = -40;
 				self.addChild(dragonBone);
-			},this)
-			this.preload = new common.Preload();
-			this.preload.addEventListener(egret.Event.COMPLETE, function() {
+				//this.preload.groupName = "preload";	
+			},this);
+			//this.preload = new common.Preload();
+			this.preload.addEventListener(egret.Event.COMPLETE, function(e) {
 				console.log('77777777777777')
-                //n.$router.replace(app.Home)
-            }, this)
+				console.log(this.$router)
+				//this.$router.replace(app.Home);
+			}, this)
+			//this.preload = new common.Preload();
+			
 		}
+		
 		
 
 

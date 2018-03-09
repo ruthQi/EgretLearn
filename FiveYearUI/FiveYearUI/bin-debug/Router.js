@@ -27,7 +27,7 @@ var Router = (function () {
     };
     Router.prototype.changeScene = function (scene, params) {
         var item = new scene(params);
-        console.log(this.context);
+        console.log('$$$$$$$$$$$$$$$$$$$', item);
         item.$router = this;
         this.context.removeChildren();
         this.context.addChild(item);

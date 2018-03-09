@@ -30,7 +30,7 @@ var common;
             if (!this.factory.getDragonBonesData(this.name)) {
                 console.log("+++++++++++", this.name);
                 var skeletonData = RES.getRes(this.name + '_ske_json');
-                //console.log(skeletonData)
+                console.log(skeletonData);
                 this.factory.parseDragonBonesData(skeletonData);
                 if (this.texCount > 1) {
                     for (var i = 0; i < this.texCount; i++) {
@@ -40,8 +40,10 @@ var common;
                     }
                 }
                 else {
+                    console.log('000000000000088888888888888');
                     var texJson = RES.getRes(this.name + '_tex_json');
                     var texPng = RES.getRes(this.name + '_tex_png');
+                    //var otherTexPng = RES.getRes('other_tex_png');
                     this.factory.parseTextureAtlasData(texJson, texPng, this.name);
                 }
             }
@@ -59,7 +61,7 @@ var common;
                 t.dispatchEventWith(dragonBones.EventObject.COMPLETE);
             }, this);
             this.addChild(this.display);
-            //this.autoPlay && this.display.animation.play(this.animationName);
+            this.display.animation.play(this.animationName);
         };
         DragonBonesImp.prototype.setProgress = function (progress) {
             this.display && this.display.animation.gotoAndStopByProgress(this.animationName, progress);

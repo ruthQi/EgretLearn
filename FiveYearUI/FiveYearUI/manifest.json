@@ -17,6 +17,7 @@
 		"bin-debug/Router.js",
 		"bin-debug/ThemeAdapter.js",
 		"bin-debug/Scenes/DragonBones.js",
+		"bin-debug/Scenes/Home.js",
 		"bin-debug/Scenes/Loading.js",
 		"bin-debug/Scenes/Preload.js"
 	]

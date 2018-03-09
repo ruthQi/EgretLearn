@@ -15,7 +15,8 @@
 		"eui.ItemRenderer": "resource/eui_skins/ItemRendererSkin.exml",
 		"DragonBones": "resource/skins/common/DragonBones.exml",
 		"Preload": "resource/skins/common/Preload.exml",
-		"Loading": "resource/skins/app/Loading.exml"
+		"Loading": "resource/skins/app/Loading.exml",
+		"Home": "resource/skins/app/Home.exml"
 	},
 	"autoGenerateExmlsList": true,
 	"exmls": [
@@ -32,6 +33,7 @@
 		"resource/eui_skins/ToggleSwitchSkin.exml",
 		"resource/eui_skins/VScrollBarSkin.exml",
 		"resource/eui_skins/VSliderSkin.exml",
+		"resource/skins/app/Home.exml",
 		"resource/skins/app/Loading.exml",
 		"resource/skins/common/DragonBones.exml",
 		"resource/skins/common/Preload.exml"

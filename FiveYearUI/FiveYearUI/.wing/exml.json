@@ -23,5 +23,10 @@
         "path": "Scenes\\Loading.ts",
         "class": "Loading",
         "parentPath": ""
+    },
+    "16209875f90": {
+        "path": "Scenes\\Home.ts",
+        "class": "Home",
+        "parentPath": ""
     }
 }

@@ -87,8 +87,8 @@ class Main extends eui.UILayer {
             this.stage.addChild(loadingView);
             await RES.loadConfig("resource/resource.json", "resource/");
             await this.loadTheme();
-            await RES.loadGroup("preload", 0, loadingView);
-            await RES.loadGroup("other", 0, loadingView);
+            //await RES.loadGroup("preload", 0, loadingView);
+            //await RES.loadGroup("other", 0, loadingView);
             
             this.stage.removeChild(loadingView);
         }

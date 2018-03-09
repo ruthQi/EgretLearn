@@ -3,12 +3,12 @@
 	<w:Config id="161ff54432e" ></w:Config>
 	<e:Rect width="100%" height="100%" x="0" y="0" fillColor="0xffffff" strokeAlpha="0" bottom="0" left="0" right="0" top="0"/>
 	<e:Image source="bg_png" x="30" y="182"/>
-	<common:Preload id="other" enabled="true" width="100%" height="100%" x="0" y="0"/>
-	<common:Preload id="preload" width="100%" height="1206" x="362" y="808" enabled="true" horizontalCenter="0" verticalCenter="120">
+	<common:Preload id="preload" groupName="preload" priority="0" width="100%" height="1206" x="362" y="808" horizontalCenter="0" verticalCenter="120">
 		<e:skinName>
 			<e:Skin>
 			<e:Label id="progress" textColor="0x472017"/>
 			</e:Skin>
 		</e:skinName>
 	</common:Preload>
+	<common:Preload id="other" groupName="other" priority="1" enabled="false" width="100%" height="100%" x="0" y="0"/>
 </e:Skin>
