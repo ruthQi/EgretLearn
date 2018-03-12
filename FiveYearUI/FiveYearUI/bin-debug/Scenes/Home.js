@@ -15,7 +15,7 @@ var app;
         function Home() {
             var _this = _super.call(this) || this;
             _this.skinName = 'HomeSkin';
-            _this.timeScale = 1.5;
+            _this.timeScale = 2;
             _this.frameFactor = 6;
             _this.totalFrames = 4124;
             _this.totalProgress = _this.totalFrames * _this.frameFactor * _this.timeScale;
@@ -33,7 +33,7 @@ var app;
             //this.scrollBar = new eui.Group();
             this.scrollBar.height = this.totalProgress + this.stage.stageHeight;
             //this.scroller = new eui.Scroller();
-            //this.scroller.addEventListener(eui.UIEvent.CHANGE, this.onScroll, this);
+            this.scroller.addEventListener(eui.UIEvent.CHANGE, this.onScroll, this);
             //this.startBtn = new eui.Rect();
             //this.startBtn.touchEnabled = true;
             this.startBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.start, this);

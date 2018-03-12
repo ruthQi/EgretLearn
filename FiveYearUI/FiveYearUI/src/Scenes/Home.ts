@@ -17,7 +17,7 @@ namespace app{
 		{
 			super.partAdded(partName,instance);
 		}
-		
+		//此处变量的命名与exml文件中的元素id对应，使用时，不需要再new,再new的话又创建了一个新的对象
 		private mainDB: common.DragonBonesImp;
 		private scrollBar: eui.Group;
 		private scroller: eui.Scroller;

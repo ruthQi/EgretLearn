@@ -8,7 +8,7 @@
 		<common:DragonBonesImp id="endDB" width="750" height="1206" x="162" y="123" armatureName="end" horizontalCenter="0" name="screen" verticalCenter="0" autoplay="false"/>
 		<e:Rect id="replayBtn" width="300" height="100" x="71" y="32" fillAlpha="0.01" fillColor="0xffffff" horizontalCenter="-170" verticalCenter="415"/>
 	</e:Group>
-	<common:DragonBonesImp id="mainDB" width="750" height="1206" x="186" y="525" animationName="Animation" armatureName="Armature" horizontalCenter="0" name="main" texCount="9" verticalCenter="0" autoplay="false"/>
+	<common:DragonBonesImp id="mainDB" width="750" height="1206" x="186" y="525" animationName="Animation" armatureName="Armature" horizontalCenter="0" name="main" texCount="22" verticalCenter="0" autoplay="false"/>
 	<e:Scroller id="scroller" width="750" height="200" x="198" y="142" bounces="false" percentHeight="100">	
 		<e:Group>
 			<e:Group id="scrollBar" width="750" height="200" x="153" y="53"/>
