@@ -32,7 +32,7 @@
  * 1.首先创建一个基于EUI的工程；
  * 2.创建exml与对应的ts文件
  * 3.编写exml的结构，在ts中编写逻辑（骨骼动画）
- * 
+ * 4.输出是app.Home,使用的是命名空间
  */
 class Main extends eui.UILayer {
 
