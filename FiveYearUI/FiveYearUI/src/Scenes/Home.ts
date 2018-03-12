@@ -18,6 +18,7 @@ namespace app{
 			super.partAdded(partName,instance);
 		}
 		//此处变量的命名与exml文件中的元素id对应，使用时，不需要再new,再new的话又创建了一个新的对象
+		//在exml中，展示层的顺序在exml中的体现是越先展示的越在下面；例如展示顺序为a->b->c；在exml中写的顺序为c,b,a
 		private mainDB: common.DragonBonesImp;
 		private scrollBar: eui.Group;
 		private scroller: eui.Scroller;
@@ -50,7 +51,7 @@ namespace app{
 			var scrollV = this.scroller.viewport.scrollV;
 			var radio = scrollV / this.totalProgress;
 			this.mainDB.setProgress(radio);
-			if(radio === 1){
+			if(radio >= 1){
 				this.stop();
 			}
 		}
@@ -73,6 +74,7 @@ namespace app{
 
 		private stop(){
 			this.end.visible = true;
+			this.mainDB.visible = false;
 			this.endDB.play('enter');
 		}
 		

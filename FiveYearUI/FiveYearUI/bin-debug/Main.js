@@ -71,6 +71,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+/**
+ * 动画实现的过程：
+ * 1.首先创建一个基于EUI的工程；
+ * 2.创建exml与对应的ts文件
+ * 3.编写exml的结构，在ts中编写逻辑（骨骼动画）
+ *
+ */
 var Main = (function (_super) {
     __extends(Main, _super);
     function Main() {
@@ -111,6 +118,7 @@ var Main = (function (_super) {
                 this.stage.scaleMode = egret.StageScaleMode.SHOW_ALL;
             }
         }
+        console.log('***************************', window.innerWidth, window.innerHeight, this.stage.scaleMode);
     };
     Main.prototype.runGame = function () {
         return __awaiter(this, void 0, void 0, function () {

@@ -27,6 +27,13 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * 动画实现的过程：
+ * 1.首先创建一个基于EUI的工程；
+ * 2.创建exml与对应的ts文件
+ * 3.编写exml的结构，在ts中编写逻辑（骨骼动画）
+ * 
+ */
 class Main extends eui.UILayer {
 
     private scaleMode;
@@ -69,6 +76,7 @@ class Main extends eui.UILayer {
                 this.stage.scaleMode = egret.StageScaleMode.SHOW_ALL;
             }
         }
+        console.log('***************************',window.innerWidth,window.innerHeight,this.stage.scaleMode);
     }
     private async runGame() {
         await this.loadResource()

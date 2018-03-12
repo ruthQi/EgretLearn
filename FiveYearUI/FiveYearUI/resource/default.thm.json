@@ -33,10 +33,10 @@
 		"resource/eui_skins/ToggleSwitchSkin.exml",
 		"resource/eui_skins/VScrollBarSkin.exml",
 		"resource/eui_skins/VSliderSkin.exml",
-		"resource/skins/app/Home.exml",
-		"resource/skins/app/Loading.exml",
 		"resource/skins/common/DragonBones.exml",
-		"resource/skins/common/Preload.exml"
+		"resource/skins/common/Preload.exml",
+		"resource/skins/app/Home.exml",
+		"resource/skins/app/Loading.exml"
 	],
 	"path": "resource/default.thm.json"
 }

@@ -44,7 +44,7 @@ var app;
             var scrollV = this.scroller.viewport.scrollV;
             var radio = scrollV / this.totalProgress;
             this.mainDB.setProgress(radio);
-            if (radio === 1) {
+            if (radio >= 1) {
                 this.stop();
             }
         };
@@ -65,6 +65,7 @@ var app;
         };
         Home.prototype.stop = function () {
             this.end.visible = true;
+            this.mainDB.visible = false;
             this.endDB.play('enter');
         };
         return Home;
