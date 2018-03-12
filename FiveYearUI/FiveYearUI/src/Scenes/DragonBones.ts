@@ -17,10 +17,11 @@ namespace common{
 			this.parseData();
 			this.createDisplay();
 		}
-		public name: string;
-		public armatureName: string;
-		public animationName: "Animation";
-		public texCount: 1;
+		public name: string="";
+		public armatureName: string="";
+		public animationName: string="";
+		public texCount: number=1;
+		public autoplay: boolean=true;
 		//public autoPlay: true;
 		private factory: dragonBones.EgretFactory = new dragonBones.EgretFactory();
 		private parseData(){
@@ -30,7 +31,9 @@ namespace common{
 				var skeletonData = RES.getRes(this.name + '_ske_json');
 				console.log(skeletonData)
 				this.factory.parseDragonBonesData(skeletonData);
+				console.log('!!!!!!!!!!!^^^^^^^^^^^^^*********',this.texCount)
 				if(this.texCount > 1){
+					console.log('&&&&&&&&&&&&&&&*************((((((((((((((()))))))))))))))')
 					for(var i = 0; i<this.texCount; i++){
 						var texJson = RES.getRes(this.name + '_tex_' + i +'_json');
 						var texPng = RES.getRes(this.name + '_tex_' + i + '_png');
@@ -60,11 +63,19 @@ namespace common{
 				t.dispatchEventWith(dragonBones.EventObject.COMPLETE);
 			},this);
 			this.addChild(this.display);
+			console.log('##############################',this.animationName)
 			this.display.animation.play(this.animationName);
 		}
 
 		public setProgress(progress){
+			console.log('88888***********************')
+			console.log(this.animationName);
+			console.log(progress);
 			this.display && this.display.animation.gotoAndStopByProgress(this.animationName, progress);
+		}
+
+		public play(name){
+			this.display && this.display.animation.play(name || this.animationName);
 		}
 
 		

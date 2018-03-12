@@ -68,10 +68,10 @@ namespace common{
 			console.warn("Group:" + e.groupName + " has failed to load");
 		}
 		private onComplete(e){
-			console.log('complete')
-			//e.groupName = this.groupName;
-			//console.log('***************', e)
-			this.end();
+			if(e.groupName == this.groupName){
+				console.log('complete');
+				this.end();
+			}
 
 		}
 		private end(){

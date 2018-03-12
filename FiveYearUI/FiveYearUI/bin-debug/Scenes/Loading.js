@@ -45,7 +45,7 @@ var app;
             this.preload.addEventListener(egret.Event.COMPLETE, function (e) {
                 console.log('77777777777777');
                 console.log(this.$router);
-                //this.$router.replace(app.Home);
+                this.$router.replace(app.Home);
             }, this);
             //this.preload = new common.Preload();
         };

@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="HomeSkin" width="400" height="300" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+<e:Skin class="HomeSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:common="common.*" >
 	<w:Config id="16209875f90" ></w:Config>
+	<e:Rect width="100%" height="100%" x="0" y="0" fillColor="0xffffff" left="0" right="0" bottom="0" top="0"/>
+	<e:Group id="end" width="200" height="200" x="409" y="34" bottom="0" left="0" right="0" top="0" visible="false">
+		<e:Rect width="20" height="20" x="133" y="35" fillColor="0xffffff" bottom="0" left="0" right="0" top="0"/>
+		<e:Image source="bg_png" x="170" y="101" horizontalCenter="0" verticalCenter="0"/>
+		<common:DragonBonesImp id="endDB" width="750" height="1206" x="162" y="123" armatureName="end" horizontalCenter="0" name="screen" verticalCenter="0" autoplay="false"/>
+		<e:Rect id="replayBtn" width="300" height="100" x="71" y="32" fillAlpha="0.01" fillColor="0xffffff" horizontalCenter="-170" verticalCenter="415"/>
+	</e:Group>
+	<common:DragonBonesImp id="mainDB" width="750" height="1206" x="186" y="525" animationName="Animation" armatureName="Armature" horizontalCenter="0" name="main" texCount="9" verticalCenter="0" autoplay="false"/>
+	<e:Scroller id="scroller" width="750" height="200" x="198" y="142" bounces="false" percentHeight="100">	
+		<e:Group>
+			<e:Group id="scrollBar" width="750" height="200" x="153" y="53"/>
+		</e:Group>
+	</e:Scroller>
+	<e:Group id="cover" width="200" height="200" x="169" y="201" bottom="0" left="0" right="0" top="0">
+		<e:Rect width="20" height="20" x="230" y="119" bottom="0" left="0" right="0" top="0" fillColor="0xffffff"/>
+		<e:Image source="bg_png" x="125" y="23" horizontalCenter="0" verticalCenter="0"/>
+		<common:DragonBonesImp id="coverDB" width="750" height="1206" x="34" y="24" animationName="enter" armatureName="cover" horizontalCenter="0" verticalCenter="0" name="screen"/>
+		<e:Rect id="startBtn" width="250" height="70" horizontalCenter="0" verticalCenter="470" visible="true" fillColor="0xffffff" enabled="true" fillAlpha="10"/>
+	</e:Group>
+	
+	
 </e:Skin>

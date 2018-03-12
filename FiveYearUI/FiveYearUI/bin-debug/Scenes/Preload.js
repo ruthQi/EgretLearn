@@ -72,14 +72,15 @@ var common;
             console.warn("Group:" + e.groupName + " has failed to load");
         };
         Preload.prototype.onComplete = function (e) {
-            console.log('complete');
-            //e.groupName = this.groupName;
-            //console.log('***************', e)
-            this.end();
+            if (e.groupName == this.groupName) {
+                console.log('complete');
+                this.end();
+            }
         };
         Preload.prototype.end = function () {
             console.log('ppppppppppppp');
             this.currentState = 'loaded';
+            //this.other加载完成，就会触发complete,所以preload也会终止
             RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onProgress, this);
             RES.removeEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onError, this);
             RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onComplete, this);

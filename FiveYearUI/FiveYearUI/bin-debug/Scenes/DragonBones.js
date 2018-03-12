@@ -14,6 +14,11 @@ var common;
         __extends(DragonBonesImp, _super);
         function DragonBonesImp() {
             var _this = _super.call(this) || this;
+            _this.name = "";
+            _this.armatureName = "";
+            _this.animationName = "";
+            _this.texCount = 1;
+            _this.autoplay = true;
             //public autoPlay: true;
             _this.factory = new dragonBones.EgretFactory();
             return _this;
@@ -32,7 +37,9 @@ var common;
                 var skeletonData = RES.getRes(this.name + '_ske_json');
                 console.log(skeletonData);
                 this.factory.parseDragonBonesData(skeletonData);
+                console.log('!!!!!!!!!!!^^^^^^^^^^^^^*********', this.texCount);
                 if (this.texCount > 1) {
+                    console.log('&&&&&&&&&&&&&&&*************((((((((((((((()))))))))))))))');
                     for (var i = 0; i < this.texCount; i++) {
                         var texJson = RES.getRes(this.name + '_tex_' + i + '_json');
                         var texPng = RES.getRes(this.name + '_tex_' + i + '_png');
@@ -61,10 +68,17 @@ var common;
                 t.dispatchEventWith(dragonBones.EventObject.COMPLETE);
             }, this);
             this.addChild(this.display);
+            console.log('##############################', this.animationName);
             this.display.animation.play(this.animationName);
         };
         DragonBonesImp.prototype.setProgress = function (progress) {
+            console.log('88888***********************');
+            console.log(this.animationName);
+            console.log(progress);
             this.display && this.display.animation.gotoAndStopByProgress(this.animationName, progress);
+        };
+        DragonBonesImp.prototype.play = function (name) {
+            this.display && this.display.animation.play(name || this.animationName);
         };
         return DragonBonesImp;
     }(eui.Component));
