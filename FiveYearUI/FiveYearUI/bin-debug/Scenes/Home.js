@@ -60,6 +60,7 @@ var app;
         };
         Home.prototype.replay = function () {
             this.end.visible = false;
+            this.mainDB.visible = true;
             this.mainDB.setProgress(0);
             this.scroller.viewport.scrollV = 0;
         };

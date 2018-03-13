@@ -1,4 +1,16 @@
 
+/**
+ * 骨骼动画控制数据，包括两大部分数据：角色各部位的骨骼链接关系；角色每个动作的定义，由每一个部位的运动轨迹组成；
+ * 其中”skeletonData”(骨骼控制数据ske.json文件)和”textureData”(纹理分解数据texure.json文件)
+ * 都包含骨架名信息。当DragonBones工厂加入多个骨架的数据时，
+ * 它们之间将通过这个骨架名来区分。
+ * 而一套骨架的骨骼控制数据和纹理数据也是通过相同的骨架名来合成该套骨架的综合数据。
+ * 即在xxx_tex.json中记录了各帧的位置，名称，以及对应的图片；xxx_ske.json中把各种的动作串联起来，
+ * 使用了xxx_tex.json文件中的帧名称与xxx_ske.json文件关联，从而把xxx_tex.json，xxx_ske.json,png结
+ * 合起来实现动画播放
+ * 注：在创建项目的时候要选择舞台的尺寸（宽*高）；如果忘记设置，则修改index.html中的data-content-width，
+ * data-content-height等属性，这样才能保证图片居中展示
+ */
 namespace common{
 	export class DragonBonesImp extends eui.Component implements  eui.UIComponent {
 		public constructor() {
@@ -19,7 +31,7 @@ namespace common{
 		}
 		public name: string="";
 		public armatureName: string="";
-		public animationName: string="";
+		public animationName: string="Animation";
 		public texCount: number=1;
 		public autoplay: boolean=true;
 		//public autoPlay: true;

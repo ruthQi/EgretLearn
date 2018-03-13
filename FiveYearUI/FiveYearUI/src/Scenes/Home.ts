@@ -68,6 +68,7 @@ namespace app{
 		}
 		private replay(){
 			this.end.visible = false;
+			this.mainDB.visible = true;
 			this.mainDB.setProgress(0);
 			this.scroller.viewport.scrollV = 0;
 		}
