@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="LoadingSkin" width="750" height="1206" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:common="common.*" >
+<e:Skin class="LoadingSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:common="common.*" >
 	<w:Config id="161ff54432e" ></w:Config>
 	<e:Rect width="100%" height="100%" x="0" y="0" fillColor="0xffffff" strokeAlpha="0" bottom="0" left="0" right="0" top="0"/>
 	<e:Image source="bg_png" x="30" y="182"/>
