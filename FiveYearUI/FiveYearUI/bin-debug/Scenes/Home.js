@@ -15,7 +15,7 @@ var app;
         function Home() {
             var _this = _super.call(this) || this;
             _this.skinName = 'HomeSkin';
-            _this.timeScale = 2;
+            _this.timeScale = 1;
             _this.frameFactor = 6;
             _this.totalFrames = 4124;
             _this.totalProgress = _this.totalFrames * _this.frameFactor * _this.timeScale;
@@ -32,6 +32,7 @@ var app;
             this.mainDB.setProgress(0);
             //this.scrollBar = new eui.Group();
             this.scrollBar.height = this.totalProgress + this.stage.stageHeight;
+            console.log(this.stage.stageHeight);
             //this.scroller = new eui.Scroller();
             this.scroller.addEventListener(eui.UIEvent.CHANGE, this.onScroll, this);
             //this.startBtn = new eui.Rect();
@@ -44,7 +45,7 @@ var app;
             var scrollV = this.scroller.viewport.scrollV;
             var radio = scrollV / this.totalProgress;
             this.mainDB.setProgress(radio);
-            if (radio >= 1) {
+            if (1 === radio) {
                 this.stop();
             }
         };

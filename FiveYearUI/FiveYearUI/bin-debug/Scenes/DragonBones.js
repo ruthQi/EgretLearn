@@ -15,7 +15,10 @@ r.prototype = e.prototype, t.prototype = new r();
  * 它们之间将通过这个骨架名来区分。
  * 而一套骨架的骨骼控制数据和纹理数据也是通过相同的骨架名来合成该套骨架的综合数据。
  * 即在xxx_tex.json中记录了各帧的位置，名称，以及对应的图片；xxx_ske.json中把各种的动作串联起来，
- * 使用了xxx_tex.json文件中的帧名称与xxx_ske.json文件关联，从而把xxx_tex.json，xxx_ske.json,png结合起来实现动画播放
+ * 使用了xxx_tex.json文件中的帧名称与xxx_ske.json文件关联，从而把xxx_tex.json，xxx_ske.json,png结
+ * 合起来实现动画播放
+ * 注：在创建项目的时候要选择舞台的尺寸（宽*高）；如果忘记设置，则修改index.html中的data-content-width，
+ * data-content-height等属性，这样才能保证图片居中展示
  */
 var common;
 (function (common) {
@@ -76,7 +79,9 @@ var common;
             this.display.addEventListener(dragonBones.EventObject.COMPLETE, function () {
                 t.dispatchEventWith(dragonBones.EventObject.COMPLETE);
             }, this);
+            //this.display.addEventListener(dragonBones.EventObject.FRAME_EVENT, this.frameEvent, this);
             this.addChild(this.display);
+            //console.log(this.display)
             console.log('##############################', this.animationName);
             this.display.animation.play(this.animationName);
         };
@@ -84,6 +89,7 @@ var common;
             console.log('88888***********************');
             console.log(this.animationName);
             console.log(progress);
+            console.log(this.display);
             this.display && this.display.animation.gotoAndStopByProgress(this.animationName, progress);
         };
         DragonBonesImp.prototype.play = function (name) {

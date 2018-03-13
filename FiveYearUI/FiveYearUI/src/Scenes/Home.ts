@@ -7,7 +7,7 @@ namespace app{
 		public constructor() {
 			super();
 			this.skinName = 'HomeSkin';
-			this.timeScale = 2;
+			this.timeScale = 1;
 			this.frameFactor = 6;
 			this.totalFrames = 4124;
 			this.totalProgress = this.totalFrames * this.frameFactor * this.timeScale
@@ -37,6 +37,7 @@ namespace app{
 			this.mainDB.setProgress(0);
 			//this.scrollBar = new eui.Group();
 			this.scrollBar.height = this.totalProgress + this.stage.stageHeight;
+			console.log(this.stage.stageHeight)
 			//this.scroller = new eui.Scroller();
 			this.scroller.addEventListener(eui.UIEvent.CHANGE, this.onScroll, this);
 			//this.startBtn = new eui.Rect();

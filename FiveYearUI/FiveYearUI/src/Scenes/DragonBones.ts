@@ -74,7 +74,9 @@ namespace common{
 			this.display.addEventListener(dragonBones.EventObject.COMPLETE, function(){
 				t.dispatchEventWith(dragonBones.EventObject.COMPLETE);
 			},this);
+			//this.display.addEventListener(dragonBones.EventObject.FRAME_EVENT, this.frameEvent, this);
 			this.addChild(this.display);
+			//console.log(this.display)
 			console.log('##############################',this.animationName)
 			this.display.animation.play(this.animationName);
 		}
@@ -83,6 +85,7 @@ namespace common{
 			console.log('88888***********************')
 			console.log(this.animationName);
 			console.log(progress);
+			console.log(this.display)
 			this.display && this.display.animation.gotoAndStopByProgress(this.animationName, progress);
 		}
 
