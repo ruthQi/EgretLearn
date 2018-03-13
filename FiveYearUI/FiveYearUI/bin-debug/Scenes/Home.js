@@ -15,7 +15,7 @@ var app;
         function Home() {
             var _this = _super.call(this) || this;
             _this.skinName = 'HomeSkin';
-            _this.timeScale = 1;
+            _this.timeScale = 2;
             _this.frameFactor = 6;
             _this.totalFrames = 4124;
             _this.totalProgress = _this.totalFrames * _this.frameFactor * _this.timeScale;
@@ -44,8 +44,10 @@ var app;
         Home.prototype.onScroll = function () {
             var scrollV = this.scroller.viewport.scrollV;
             var radio = scrollV / this.totalProgress;
+            console.log(scrollV, this.totalProgress);
             this.mainDB.setProgress(radio);
-            if (radio >= 1) {
+            //注：此处的scroller的y需要设置为0，否则的话radio获取到的值不能===1
+            if (radio === 1) {
                 this.stop();
             }
         };
@@ -64,10 +66,12 @@ var app;
             this.mainDB.visible = true;
             this.mainDB.setProgress(0);
             this.scroller.viewport.scrollV = 0;
+            this.scroller.addEventListener(eui.UIEvent.CHANGE, this.onScroll, this);
         };
         Home.prototype.stop = function () {
             this.end.visible = true;
             this.mainDB.visible = false;
+            this.scroller.removeEventListener(eui.UIEvent.CHANGE, this.onScroll, this);
             this.endDB.play('enter');
         };
         return Home;

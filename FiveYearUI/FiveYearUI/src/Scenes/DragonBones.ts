@@ -10,6 +10,7 @@
  * 合起来实现动画播放
  * 注：在创建项目的时候要选择舞台的尺寸（宽*高）；如果忘记设置，则修改index.html中的data-content-width，
  * data-content-height等属性，这样才能保证图片居中展示
+ * data-scale-mode="fixedWidth",mode模式参数：SHOWALL,FIXEDWIDTH等
  */
 namespace common{
 	export class DragonBonesImp extends eui.Component implements  eui.UIComponent {

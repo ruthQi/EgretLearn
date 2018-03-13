@@ -7,7 +7,7 @@ namespace app{
 		public constructor() {
 			super();
 			this.skinName = 'HomeSkin';
-			this.timeScale = 1;
+			this.timeScale = 2;
 			this.frameFactor = 6;
 			this.totalFrames = 4124;
 			this.totalProgress = this.totalFrames * this.frameFactor * this.timeScale
@@ -51,8 +51,10 @@ namespace app{
 		private onScroll(){
 			var scrollV = this.scroller.viewport.scrollV;
 			var radio = scrollV / this.totalProgress;
+			console.log(scrollV,this.totalProgress)
 			this.mainDB.setProgress(radio);
-			if(radio >= 1){
+			//注：此处的scroller的y需要设置为0，否则的话radio获取到的值不能===1
+			if(radio === 1){
 				this.stop();
 			}
 		}
@@ -72,11 +74,13 @@ namespace app{
 			this.mainDB.visible = true;
 			this.mainDB.setProgress(0);
 			this.scroller.viewport.scrollV = 0;
+			this.scroller.addEventListener(eui.UIEvent.CHANGE, this.onScroll, this);
 		}
 
 		private stop(){
 			this.end.visible = true;
 			this.mainDB.visible = false;
+			this.scroller.removeEventListener(eui.UIEvent.CHANGE, this.onScroll, this);
 			this.endDB.play('enter');
 		}
 		
