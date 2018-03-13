@@ -45,7 +45,7 @@ var app;
             var scrollV = this.scroller.viewport.scrollV;
             var radio = scrollV / this.totalProgress;
             this.mainDB.setProgress(radio);
-            if (1 === radio) {
+            if (radio >= 1) {
                 this.stop();
             }
         };
